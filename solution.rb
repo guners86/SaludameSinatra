@@ -1,5 +1,10 @@
 require 'sinatra'
 
 get '/' do
-  "Hola #{params[:nombre]}!"
+
+	if params[:nombre].nil?
+    	return "Hola desconocido!"
+    else
+    	return "Hola #{params[:nombre]}!"        
+    end
 end
